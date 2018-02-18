@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="inputNumber">Input a number</label>
+                <input type="number" 
+                       class="form-control" 
+                       id="inputNumber"
+                       aria-describedby="emailHelp" 
+                       placeholder="Enter a number to check prime number">
+            </div>
+            <button type="submit" 
+                    class="btn btn-primary"
+                    onclick="execute(document.getElementById('inputNumber').value)"
+                    value="Execute">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
