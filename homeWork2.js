@@ -4,9 +4,15 @@
  */
 
 
-let testArray = [345,768,67,457,456,456,134,4567];
+let testArray = function () {
+    const Array = [];
+    for (let i = 0; i < 10; i++) {
+        Array.push(Math.floor(Math.random()*100));
+    }
+    return Array;
+};
 
-removeBiggestElementFromArray(testArray);
+removeBiggestElementFromArray(testArray());
 
 function removeBiggestElementFromArray(arrayTest) {
     let biggest =  Number.NEGATIVE_INFINITY;
@@ -44,7 +50,7 @@ Method 2 : Using regular for loop
     testArray.splice(biggestIndex, 1);
 
     console.log("Array after element removal: " + testArray );
-})(testArray);
+})(testArray());
 
 /*
  CSS HOME WORK
