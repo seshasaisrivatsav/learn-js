@@ -1,0 +1,113 @@
+Class 1 02/18
+-------------
+HTML5 introducted inline blocks.
+twitter bootstrap
+bootstrap = not native to your browser
+flexbox = natively available in the newer browsers. 
+CSS grid = competitor to flexbox
+
+
+start with blocks and in line blocks
+
+If you can build a layout
+
+<div>
+asdas
+</div>
+
+// it has display: block by default
+
+<p>
+asd
+</p>
+// it has display block, margins and stuff
+
+
+what are the blocks in css?
+paragraph, div
+
+computed
+--------
+it's also kind of default
+
+css is global.
+There are solutions to it. 
+
+padding
+-------
+what every is padding inside div, add 2px to it
+<div style="padding;2px; border: 1px solid green">hi</div>
+
+added inside.
+
+margin
+------
+added outside. between itself and next element 
+
+<p>hi<p> default font size is 16; but when you inspect it, it shows 18. as it adds 1px on top and bottom.
+
+
+What is a border box?
+Content and padding around it and a border around it.
+
+hook/selector
+--------------
+1. class
+connecting html and css
+<div class = "test">hi</div>
+css
+.test {
+    border: 1px solid red;
+}
+
+
+2. id
+<div id = "myId>hi </div>
+
+#myId {
+    background-color: brown;
+}
+
+ids are supposed to be unique. 
+classes can be used multiple times.
+
+3. attribute
+class and id are attributes
+<div sesha=""> hi</div>
+
+in css
+[sesha] {
+    background-color:white;
+}
+
+
+specificity: when conflicting styles are applied to same elements, based on priority, called specificity, it goes.
+Eg: id and attribute conflict, id is given first priority as it is unique.
+
+
+id can be used for css and JS both
+
+<div myName = "test1"> h11 </div>
+
+<div myName = "test2"> h11 </div>
+
+
+css
+
+[myName = "test1" ] {
+asdfsdf
+}
+[myname = "test2] {
+asyjuk
+}
+
+
+these are also called selector/hook
+
+combination
+------------
+applying combination of selectors to a style
+.className#myID{
+    background-color: black
+}
+

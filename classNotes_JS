@@ -1,0 +1,218 @@
+class 1 -- 02/ 
+----------------
+JS basics 
+_prototype_
+difference between let, var, const 
+
+
+class 2 -- 02/18
+----------------
+
+Primitives = Symbol, 
+Reference data type JS = 
+In object world we have JS object
+1. Objects
+2. Arrays
+3. Typed Arrays
+4. Maps , Weak maps
+5. Sets, Weak sets
+
+8-bit, 16-bit arrays
+
+4 and 5 are available in ES6. 
+JS object and object type
+object type = anything you can mutate
+Primitive types cant be mutated
+
+let x = 1 //this one can't be mutated, value can't be changed
+x = 2 // it would get a different address
+
+however when you have object
+
+let y = [1, 2]; // this can be modified
+y.push (3) // this can be mutated; address is same
+
+y = [1,2,3]; // address is changed
+
+when you have such use case, use const. It prevents us from using the "=" sign again.
+
+Use const if you don't want mutation. 
+
+When it's a primitive data type, you always use "let". If you use const in primitive, you can't change it's value.
+
+
+* Let = Primitive data types
+* Const = Objects
+
+
+Arrays
+------
+There are two ways to create arrays:
+const gList= ['bread', 'tomato'];
+gList.push('eggs);
+
+There are two ways to look at it
+console.log(gList);
+console.table(gList); // gives a table with index 
+
+gList.pop(); // pop's an element
+console.log(gList[1]); // access an element by index
+
+
+const x= [{a:1, b:2}, {a:3, b:4}];
+console.table(x, 'a'); // only filters out 'a'
+
+tip: better debugging techniques in JS
+
+
+We can add some element to the front of an array
+1. shift
+2. unshift
+
+gList.unshift('eggs'); // adds eggs to the front
+gList.shift(); // removes the first element
+
+splice
+------
+
+arrayName.splice(position, noOfItemsToBeRemoved, 'elementToBeAdded');
+Add an element at third position of an array
+1 = removes one element 
+element = adds element at third index 
+arrayName.splice(2, 1, 'element'); 
+
+Note: Using new Array i.e, a constructor, it creates problems
+PRIMITIVE TYPES = NO CONSTRUCTORS
+OBJECTS = USE LITERAL FIRST, USE CONSTRUCTORS IF ABSOLUTELY NECESSARY
+
+difference between slice and splice
+-----------------------------------
+splice = insert and remove elements
+slice = takes the object/string converts into an array // It's a prototype method
+
+eg:
+let x = function() {
+    console.log(arguments); 
+}
+
+x(1,2,3); // returns arguments 
+
+You can slice it to make it return an array of arguments
+let x = function() {
+    console.log([].slice.apply(arguments));
+}
+
+x(1,2,3); // returns arguments in array format 
+
+
+what ever argumetns are passed into the function, it'll be found in arguments
+
+
+from
+----
+alternative to splice
+let x = function() {
+    console.log(Array.from.apply(arguments));
+}
+
+x(1,2,3); // returns arguments in array format 
+
+bread operator
+----------------
+another alternative to splice
+let x = function() {
+    console.log(...arguments);
+}
+
+x(1,2,3); // returns arguments in array format 
+
+multi-dimensional array
+------------------------
+"array inside an array"
+
+const matrix = [
+[1,2,3], // index 0 array has three elements with indixes 0,1,2
+[4,5,6],
+[7,8,9]
+]
+
+
+console.log(matrix[0][0]) // gives 1
+
+
+set
+---
+const set1 = new Set([1,2,3,4]);
+console.log(set1); // doesn't have duplicates
+// has different methods than arrays
+const set1 = new Set([1,1,1,1, 2,3,4]); //1,2,3,4
+
+chaining in sets
+----------------
+You have an object/constructor and you call methods on it, and we can keep calling same thing
+set1.add(4).add(5);
+
+console.log(set1) //returns all values
+
+set methods
+------------
+set1.size // gives number of elements
+set1.has(1); //checks if the element 1 is present in the set, returns boolean
+set1.values(); // gives us an iterator
+set1.delete(element) // deletes the value
+set1.clear() //clears the whole set
+
+
+weakset
+Q. Is there  a way without constructor
+
+for of loop
+-----------
+for (i of set1) {
+    console.log(i); 
+}
+
+above loop gives values of all elements in the set set1.
+
+'for of' is faster than regular 'for' loop and 'for each' loop
+Note: here i is the item
+If you want to get item and index both, then
+
+for (let [index, item] of set1.entres() ){
+
+}
+
+//arrays
+for (let [index, item] of arrayTest.entries()){
+     console.log(`${index}:${item}`);
+}
+
+entries is also a new thing in it
+for each
+----------
+const x = [1,2,3];
+
+let func = function(item, index) {
+    console.log(`${index}:${item}`);
+}
+
+x.forEach(func);
+
+gives:
+0:1
+1:2
+2:3
+
+Note: try to use for of
+
+for in
+-------
+Used for looping objects
+
+Iterator, set are part of ES6
+
+slowest to fastest
+--------------------
+For each > for > for of
+
+

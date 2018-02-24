@@ -14,5 +14,10 @@ let checkPrime = function (nr) {
     }
     console.log(nr + " is a prime number");
     
-}
+};
+
+checkPrime(1);
+
+
+
  
