@@ -20,4 +20,10 @@ checkPrime(1);
 
 
 
- 
+ let testFunction = function(a) {
+
+       a = 3;
+     console.log(this.a);
+
+ };
+ testFunction(5);

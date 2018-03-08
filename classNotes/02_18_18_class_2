@@ -1,15 +1,6 @@
-class 1 -- 02/ 
-----------------
-JS basics 
-_prototype_
-difference between let, var, const 
 
-
-class 2 -- 02/18
-----------------
-
-Primitives = Symbol, 
-Reference data type JS = 
+Primitives = Symbol,
+Reference data type JS =
 In object world we have JS object
 1. Objects
 2. Arrays
@@ -19,7 +10,7 @@ In object world we have JS object
 
 8-bit, 16-bit arrays
 
-4 and 5 are available in ES6. 
+4 and 5 are available in ES6.
 JS object and object type
 object type = anything you can mutate
 Primitive types cant be mutated
@@ -36,7 +27,7 @@ y = [1,2,3]; // address is changed
 
 when you have such use case, use const. It prevents us from using the "=" sign again.
 
-Use const if you don't want mutation. 
+Use const if you don't want mutation.
 
 When it's a primitive data type, you always use "let". If you use const in primitive, you can't change it's value.
 
@@ -53,7 +44,7 @@ gList.push('eggs);
 
 There are two ways to look at it
 console.log(gList);
-console.table(gList); // gives a table with index 
+console.table(gList); // gives a table with index
 
 gList.pop(); // pop's an element
 console.log(gList[1]); // access an element by index
@@ -77,9 +68,9 @@ splice
 
 arrayName.splice(position, noOfItemsToBeRemoved, 'elementToBeAdded');
 Add an element at third position of an array
-1 = removes one element 
-element = adds element at third index 
-arrayName.splice(2, 1, 'element'); 
+1 = removes one element
+element = adds element at third index
+arrayName.splice(2, 1, 'element');
 
 Note: Using new Array i.e, a constructor, it creates problems
 PRIMITIVE TYPES = NO CONSTRUCTORS
@@ -92,17 +83,17 @@ slice = takes the object/string converts into an array // It's a prototype metho
 
 eg:
 let x = function() {
-    console.log(arguments); 
+    console.log(arguments);
 }
 
-x(1,2,3); // returns arguments 
+x(1,2,3); // returns arguments
 
 You can slice it to make it return an array of arguments
 let x = function() {
     console.log([].slice.apply(arguments));
 }
 
-x(1,2,3); // returns arguments in array format 
+x(1,2,3); // returns arguments in array format
 
 
 what ever argumetns are passed into the function, it'll be found in arguments
@@ -115,7 +106,7 @@ let x = function() {
     console.log(Array.from.apply(arguments));
 }
 
-x(1,2,3); // returns arguments in array format 
+x(1,2,3); // returns arguments in array format
 
 bread operator
 ----------------
@@ -124,14 +115,14 @@ let x = function() {
     console.log(...arguments);
 }
 
-x(1,2,3); // returns arguments in array format 
+x(1,2,3); // returns arguments in array format
 
 multi-dimensional array
 ------------------------
 "array inside an array"
 
 const matrix = [
-[1,2,3], // index 0 array has three elements with indixes 0,1,2
+[1,2,3], // index 0 array has three elements with indices 0,1,2
 [4,5,6],
 [7,8,9]
 ]
@@ -169,7 +160,7 @@ Q. Is there  a way without constructor
 for of loop
 -----------
 for (i of set1) {
-    console.log(i); 
+    console.log(i);
 }
 
 above loop gives values of all elements in the set set1.
@@ -214,5 +205,3 @@ Iterator, set are part of ES6
 slowest to fastest
 --------------------
 For each > for > for of
-
-
