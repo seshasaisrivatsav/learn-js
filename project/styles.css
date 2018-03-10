@@ -1,0 +1,24 @@
+/**********************************
+Navbar stylinh
+***********************************/
+
+ 
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+
+.navbar .navbar-brand{ 
+  background: url(images/logo.png) center / contain no-repeat;
+  width: 200px;
+}
+ 
+
+
+
+ 
+body {
+  font-family: "Georgia";
+}

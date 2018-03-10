@@ -1,0 +1,31 @@
+
+Function Declaration v/s Function Expression/anonymous function
+===============================================================
+
+Function Declaration
+--------------------
+* Why not to use function declarations
+function add (a,b) {
+    return a+b;
+}
+
+Don't use above!!
+
+Because the functions are hoisted. 
+If you do a console.log(add(1,2)) before the function is even declared, you get the answer.
+
+
+
+Function Expression:
+-------------------
+const add = function (x,y) {
+    return x+y;
+}
+
+the above function is not available before it's declaration;
+
+Arrow function
+--------------
+const add = (x, y) => {
+    return x+y;
+}

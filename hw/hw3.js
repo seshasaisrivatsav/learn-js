@@ -15,7 +15,10 @@ const profiles = [{
     single: true,
     changeChildsName(name, newName){
         for(let [i, v] of this['list of children'].entries()){
-            console.log(v);
+            if(v.name === name){
+                this['list of children'][i].name = newName;
+            }
+           
         }
     },
     'list of children': [{
@@ -26,13 +29,17 @@ const profiles = [{
         age: 20
     }]
 }];
-console.log(profiles[0]['list of children']);
-profiles[0].changeChildsName("peter" , "petera")
-console.log(profiles[0]['list of children']);
 
+
+// function to add a child
 
 const addChild = function(profile, name, age){
-//write your code here and
-
+    profile[0]['list of children'].push({name: name, age: age});
 };
 
+
+
+// change name of john's child peter to petah
+
+profiles[0].changeChildsName('peter', 'petah');
+console.log('profiles');
