@@ -1,0 +1,137 @@
+Moving towards a framework.
+CSS and html, you don't need a framework.
+
+Write own CSS, use pure JS
+
+You have to use selectors to just use javascript to create.
+Get element by ID /class name and do append something to that node.
+
+Interview - they ask pure JS questions. 
+
+
+Use own styles to create navbar. Big companies don't use bootstrap. It's good but not flexible. Comapnies have their own things
+Eg:  Foundation -
+Flex framework = Replacement for bootstrap
+CSS Grid - native CSS
+
+Callback functions and Immediately invoked function expression
+====================================
+
+Callback
+--------
+Important in JS
+
+Callback  = Passing function as argument and executing it at some point
+
+x function takes callback function cb
+
+
+const x = (cb) => {
+    console.log('executing x');
+    cb();
+    console.log('executing x completed');
+}
+
+const y = () => {
+    console.log('Y is executed');
+}
+
+// y can be passed into x
+// y is executed inside x. not immediately
+
+x(y);
+/*
+executing x
+Y is executed
+executing x completed
+*/
+
+
+
+Q. Why do we use callback functions?
+A. 
+Eg:
+<div class="a"></div?
+
+
+const sayHello = () => {
+    console.log('hello')
+}
+
+$('.a').click(sayHello);
+
+This is an example of callback.We pass in the function to click. 
+
+It can also be done as passing an anonymous function. It is used when a function is never re-used.
+
+
+// operator can be anything. +, -, *, %
+
+const calc = (a, b, operator) => {
+    return operator(a,b);
+}
+
+calc(2,4, add); // add function is going to be built by user
+
+const add = (a,b) => {
+    return a+b;
+}
+
+const whatever = (a, b) => {
+    return `i don't know the numbers ${a} , ${b}`;
+}
+
+
+Higher order functions = Callbacks = functions that you pass.
+
+IFFE
+============
+
+// Function Expression
+const x = () => {
+    console.log('a');
+}
+
+We are saving the anonymouse function in x
+
+IF we want to execute it only once, no need to store it in x.
+
+(const x = () => {
+    console.log('a');
+})();
+
+
+((argument) => {
+    console.log(a);
+})("hello");
+
+IFFE creates localscope or block scope
+
+
+
+
+Eg:
+
+const y = () => {
+    ((argument) => {
+        var x = 1;
+    })("hello");
+
+    console.log(x); // error
+}
+
+
+var has function, but when wrapped with IFFE it won't be available;
+
+
+
+Window can be used inside
+const y = () => {
+    ((w) => {
+       console.log(w);
+    })(window);
+
+    console.log(w); // not abailable outside. 
+}
+
+promises or OOPS

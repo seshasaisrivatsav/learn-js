@@ -114,3 +114,220 @@ applying combination of selectors to a style
 
 class 4 - 04/03/2018
 ------------------
+asd
+
+
+class 5 - 04/10/2018
+---------------------
+display property
+
+By default divs are blocks
+
+
+<div class = "a">a</div>
+<div class = "a b">b</div>
+<div class = "a">c</div>
+<div class = "a">d</div>
+<div class = "a">e</div>
+<div class = "a">f</div>
+<div class = "a">g</div>
+
+.a {
+display: inline-block;
+width:60px;
+}
+
+If you want to move d before
+
+position property
+-----------------
+Besides where this element where it's going to be positioned. 
+display = natural order
+position = user defined position
+
+By default, position value is static [observe in css]
+
+
+.a {
+    display: inline-block;
+    width: 60px;
+}
+
+margin impacts others
+.b {
+    margin: 20px; // applies on all sides
+    margin-left: 20px; // applies 20px on left
+}
+
+to change position (absolute, relative)
+
+
+element b moves to the right, without impacting others when we move relative position. 
+
+.b {
+    position:relative;
+    left:20px; //  moves to right
+    top: 60px; // moves to bottom
+}
+
+margin applies to all elements
+
+
+--------------------------------------
+look at :
+
+.a {
+    display: inline-block;
+    width: 60px;
+    border: 1px solid red;
+}
+
+.b {
+    position:relative;
+    bottom:60px;  
+    margin-top: 100px;  
+}
+
+
+---------------------------------------
+
+<div class="wrap">
+
+
+    <div class = "a">a</div>
+    <div class = "a b">b</div>
+    <div class = "a">c</div>
+    <div class = "a">d</div>
+    <div class = "a">e</div>
+    <div class = "a">f</div>
+    <div class = "a">g</div>
+</div>
+
+
+.a {
+    display: inline-block;
+    width: 60px;
+    vertical-align: top;
+    border: 1px solid red;
+}
+
+.b {
+    position:relative;
+    bottom:60px;  
+    margin-top: 100px;  
+}
+
+.wrap {
+    border: 1px solid black;
+}
+
+
+
+================================================
+Mastering CSS
+============
+1. Box model
+2. Display
+3. Position
+
+
+blocks = containers
+span = simple text, doesn't take width or height.
+
+Look at properties that get inherited and what doesn't.
+Eg: Font gets inherited
+Display 
+
+
+================================================
+
+position:absolute
+----------------
+relative to its relative parent
+
+if you use position: absolute; you need to specify left, right etc
+
+
+
+.b {
+    position:absolute;
+    left: 30px;
+}
+
+
+
+----------------------------------
+<div class = "x">
+
+    <span>asdasd</span>
+    <button class = "y"> click </button>
+
+</div>
+
+
+.x {
+    height: 200px;
+    width: 300px;
+    border: 1px solid red;
+    position: relative;
+
+}
+
+.y {
+    position: absolute;
+    right: 5px;
+    bottom: 5px
+}
+------------------------------------
+
+position:fixed
+---------------
+Eg: add stays where it is even if we scroll.
+
+.elementClass {
+    position: fixed;
+    top: 30px;
+    border: 1px solid
+}
+
+
+inherit
+------ 
+inherits parents' property. it doesn't inherit top right left
+------------------------------------------
+
+
+Responsive design
+=-=-=--==-=-=-=-=-=-
+
+When bottom screen is at certain width, make it different
+----------------------
+<div class="text">my </div>
+<div class="text">name </div>
+<div class="text">is </div>
+<div class="text">srivatsav </div>
+
+
+.text {
+    display: inline-block;
+    background-color: blue;
+}
+
+// 500 px and below
+@media screen and (max-width: 500px) {
+    .text{
+        background-color: yellow;
+    }
+}
+
+Whatever is in media, that's applied if screen goes below 500px
+
+You can make multiple media for multiple sizes.
+
+
+
+horizontal alignment => text-align: center;
+vertical alignment =>
+    line-height: 50px
+    
+   
