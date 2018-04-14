@@ -1,0 +1,251 @@
+We can create an object or constructor
+========================================
+
+
+const Mammal = function(legs) {
+    this.legs = legs;
+}
+
+Mammal.prototype.walk = function(){
+
+} 
+// Above thing is same as below 
+
+Note:it's better to do above as if you do the below thing again it will override.
+
+Mammal.prototype = {
+    walk() {
+        console.log('walking');
+    },
+    sleep() {
+        console.log('sleeping');
+    }
+}
+
+
+// Creating a subconstructor
+const Bat = function(legs, hasWings) {
+    // the call is equivalent to super
+    Mammal.call(this, legs); // this sets constructor this.legs here
+    this.hasWings = hasWings;
+}
+Inheriting from mammal
+
+// Adding all the bat's prototpe here
+Bat.prototype = Object.create(Mammal.prototype);
+Bat.prototype.fly = function(){
+    console.log('flying');
+} 
+
+
+Note: Object.create links the reference.
+
+javascript uses composition.
+
+Inheritance and composition difference
+========================================
+Inheritance = You have a parent, mammal. You create a sub class bat. you need to have strict inheritamce where bat inherits all methods.
+
+Composing = you take two objects and use one's ability to fly and other's ability.
+
+Mixins = concept of composition
+
+Even Java has concept of compositions. 
+
+Classes is inheritance model. We will look at composition after that.
+
+Class
+==========
+classes are part of ES6.
+
+class Car {
+    constructor(color) {
+        this.color = color;
+    }
+    
+    drive() {
+        console.log('driving');
+    
+    }
+}
+
+let redCar = new Car('red');
+console.log(redCar);
+
+
+You can add methods even after you create
+Car.protoype.stop = function(){
+    console.log('stopping');
+}
+
+Internally it creates factory function. It would have a prototype drive method.
+
+
+
+
+class extends
+===================
+Note: Sub class needs to have a constructor
+
+class Mammal {
+    constructor(_legs, _name) {
+    this.legs = _legs;
+    this.name = _name;
+    }
+    
+    walk(){
+        return `${this.name} is walking with ${this.legs} legs~`;
+    }
+}
+
+
+Note: Super calls mammal's constructor and sets it for bat
+
+class Bat extends Mammal {
+    constructor(_legs, _name, _eatsMeat) {
+        super(_legs, _name);
+        this.eatsMeat = _eatsMeat;
+    }
+    
+    fly(){
+        return `${this.name} is flying`;
+    }
+}
+
+const newBat = new Bat(4, 'john', true);
+
+console.log(newBat.walk());
+console.log(newBat.fly());
+
+Note: when not using the properties
+
+Static method
+======================================
+class Car {
+
+    constructor(color, price){
+        this.color = color;
+        this.price = price;
+    }
+    
+    static comparePrice(car1, car2) {
+        return Math.abs(car1.price - car2,price);
+    }
+}
+
+const redCar = new Car('red', 50);
+const greenCar = new Car('green', 20);
+
+Car.comparePrice(redCar, greenCar);
+
+
+
+Compositional Inheritance / Object.assign
+===========================================
+We need to borrow things. We are going to use object literals. 
+const toyota = {
+    drive() {
+        return 'driving toyota';
+    }
+    
+}
+
+const camry = {
+    wifi() {
+        return 'using wifi';
+    }
+}
+
+// gets both methods
+Object.assign(camry, toyota);
+
+console.log(camry); // this iwll have both methods
+
+--------------------------------------------------------------------
+object assign helps you copy all objects and their properties
+
+const Car = function(color, a, b, c, d) {
+    Object.assign(this, {color, a, b, c, d})
+}
+--------------------------------------------------------------------
+let FlyingStuff = {
+    fly() {
+        console.log('flying');
+    },
+    land() {
+        console.log('landing');
+    }
+}
+
+let HumanStuff = {
+    eat() {
+        console.log('eating');
+    },
+    feel() {
+        console.log('feeling');
+    }
+}
+
+
+// let's create a constructor
+
+class FlyingMan {
+    
+}
+
+Object.assign(FlyingMan.prototype, FlyingStuff);
+Object.assign(FlyingMan.prototype, HumanStuff);
+
+const superMan = new FlyingMan();
+
+console.log(superMan.fly());
+console.log(superMan.eat());
+
+--------------------------------------------------------------------
+const Car = (color) => {
+    return Object.assign({}, {
+        color: color
+    });
+}
+
+const redCar = Car('red');
+console.log(redCar);
+
+--------------------------------------------------------------------
+
+
+const flyFactory = function(obj){
+
+  let isFlying = false;
+  
+  return Object.assign({}, obj, {
+    fly(){
+      isFlying = true;
+      return this;
+    }, isFlying(){
+      return isFlying;
+    }
+  });
+
+};
+
+const HumanFactory = function(obj){
+
+  let isCrying = false;
+  
+  return Object.assign({}, obj, {
+    cry(){
+      isCrying = true;
+      return this;
+    }, isCrying(){
+      return isCrying;
+    }
+  });
+
+};
+
+
+const superman = HumanFactory(flyFactory({}));
+
+console.log(superman.fly().cry().is);
+
