@@ -46,3 +46,8 @@ class Stack {
   }
 }
 ```
+
+## 2. Whis is 'use strict' used in JS
+
+## 3. 
+

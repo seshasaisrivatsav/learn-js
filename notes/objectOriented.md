@@ -109,4 +109,73 @@ class Circle {
 
 ## Modules
 
-- In order to make code maintainable, we
+- In order to make code maintainable, we need modules
+- ES5 didn't have modules
+
+Module Types
+
+- AMD - for browser
+- commonJs - Node.js
+- ES6 Modules - browser
+
+### CommonJS Format
+
+Exporing a module
+
+```js
+module.exports.ClassName = ExportName;
+```
+
+or
+
+```js
+module.exports = ClassName;
+```
+
+Using it in another
+
+```js
+const className = require("./ClassName");
+```
+
+### ES6 Format
+
+In this file export class
+
+```js
+export class Bleh {}
+```
+
+Using it in script.js
+
+```js
+import { Bleh } from "./Bleh.js";
+```
+
+In HTML
+
+```html
+<script type="module" src="script.js" />
+```
+
+## ES6 Tooling
+- For Tooling, we need
+    - Transpiler = Translator + Compiler (Converts JS to browser understandable code) EG: Babel
+    - Bundler = Combines all JS files into single js file, called bundle. Eg: Webpack
+- Webpack 
+
+### Babel
+- To test this, you need node (npm)
+- npm install babel cli, babel-core, babel-present-env
+- https://codewithmosh.com/courses/310571/lectures/4881476
+
+### Webpack
+`npm i -g webpack-cli`
+To generate cli
+`webpack-cli init`
+
+- Single multiple - No
+- dist files
+- ES2015 = Yes (it automatically does bale)
+
+Certificate - https://codewithmosh.com/courses/310571/certificate
