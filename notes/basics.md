@@ -1,5 +1,26 @@
 <h1>JavaScript Basics</h1>
 
+### Using bracket way of defining a constant 
+```js
+function getRes() {
+	return {
+  	a: {
+    	b: "something",
+      c: 12
+    }
+  };
+}
+
+// creating a const 'res'
+const { 
+	a: { 
+  	b: res
+   }
+} = getRes();
+
+console.log(res); // something
+```
+
 ### Using curly braces
 
 If an object is like this in a file
