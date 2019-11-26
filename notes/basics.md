@@ -1,19 +1,21 @@
 <h1>JavaScript Basics</h1>
 
-### Using bracket way of defining a constant 
+### Using bracket way of defining a constant ([Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment))
+
 ```js
 function getRes() {
-	return {
+  return {
   	a: {
-    	b: "something",
-      c: 12
-    }
-  };
-}
+	  b: "something",
+      	  c: 12
+	}
+   }		
+};
+
 
 // creating a const 'res'
 const { 
-	a: { 
+	a: {
   	b: res
    }
 } = getRes();
