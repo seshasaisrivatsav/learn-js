@@ -1,5 +1,62 @@
 <h1>JavaScript Basics</h1>
 
+### [Bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+Note: Bind only works with functions, if you have arrow functions, then see the below solution
+#### Bind for function
+```js
+let obj = {
+  num: 2
+};
+
+let addFn = function (a,b) {
+  return this.num + a + b;
+}
+
+let bound = addFn.bind(obj);
+
+console.log(bound(1,2))
+```
+#### Bind for arrow function
+```js
+let fun = (a, b) => {
+	return a + b
+}
+
+let bound = fun.bind(null, 1, 2);
+
+console.log(bound()) // 3
+```
+### `Call`ing or `apply`ing the bound functions with arguments directly.
+Both call and apply are used to invoke the bound function directly with apply taking the second argument as array.
+#### Call
+Call is nothing but calling the bound function directly
+
+```js
+let obj = {
+  num: 2
+};
+
+let addFn = function (a,b) {
+  return this.num + a + b;
+}
+
+console.log(addFn.call(obj, 1, 2))
+```
+
+#### [Apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+
+```js
+let obj = {
+  num: 2
+};
+
+let addFn = function (a,b) {
+  return this.num + a + b;
+}
+
+console.log(addFn.apply(obj, [1, 2]))
+```
+
 ### Using bracket way of defining a constant ([Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment))
 
 ```js
@@ -22,6 +79,7 @@ const {
 
 console.log(res); // something
 ```
+
 
 ### Using curly braces
 
