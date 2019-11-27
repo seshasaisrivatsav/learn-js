@@ -96,3 +96,34 @@ const { b, c } = a;
 ````
 
 ### Import and export rules
+
+
+### Property descriptors
+Configurable, Enumerable, Writable
+```js
+const readOnlyProperty = (obj, name, value) => {
+  Object.defineProperty(obj, name, {
+    value,
+    configurable: false,
+    enumerable: true,
+    writable: false,
+  });
+};
+
+let testObject = {};
+readOnlyProperty(testObject, 'hello', 1);
+console.log(testObject); // { hello: 1}
+
+
+// Getting them back
+
+// Enumerable
+console.log('enumerable:' + testObject.propertyIsEnumerable('hello')) // True
+ 
+const configurableTest = Object.getOwnPropertyDescriptor(testObject, 'hello');
+console.log('configurable: ' + configurableTest.configurable);
+console.log('Enumerable: ' + configurableTest.enumerable);
+console.log('Writable: ' + configurableTest.writable);
+
+```
+
