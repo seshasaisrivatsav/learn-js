@@ -1,6 +1,6 @@
-### Jest handy notes
+## Jest handy notes
 
-## Testing a promise
+### Testing a promise
 
 If the below `exectCallBack` is not used, then the frame work will not wait for results, but goes till the end and test passes. To Ensure we go in this flow, we use the callback
 ```js
