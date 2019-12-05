@@ -1,5 +1,23 @@
 <h1>JavaScript Basics</h1>
 
+### Promise, async, await example
+Create a promise and get result async
+```js
+let promise1 = new Promise((resolve, reject) => {
+  setTimeout(function() {
+    resolve({a: 'hello'});
+  }, 300);
+})
+
+
+const getRes = async () => {
+  let res = await promise1;
+  return res;
+}
+
+getRes().then(res => { console.log(res) })
+```
+
 ### [Bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
 Note: Bind only works with functions, if you have arrow functions, then see the below solution
 #### Bind for function
