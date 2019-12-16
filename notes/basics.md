@@ -3,10 +3,27 @@
 ### Promise, async, await example
 Create a promise and get result async
 ```js
+
 let promise1 = new Promise((resolve, reject) => {
-  setTimeout(function() {
-    resolve({a: 'hello'});
-  }, 300);
+  if(true) {
+      setTimeout(function() {
+      	resolve({a: 'hello'});
+    	}, 300);
+  } else {
+      setTimeout(function() {
+      	reject({error: 'error', reason:'you are jackass'});
+    	}, 300);
+  }
+})
+
+  console.log(promise1) // pending
+
+promise1.then(function (res) {
+	console.log(res)
+  console.log(promise1) // resolved
+}).catch(err => {
+	console.log(err);
+  console.log(promise1) // rejected
 })
 
 
