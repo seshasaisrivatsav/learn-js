@@ -27,3 +27,26 @@ If you just want to see if a promise is resolved or failed, then do this.
     });
   });
 ```
+
+### Mocking an import method
+
+In Source
+```js
+import method from '../file';
+```
+In Test
+```js
+import method from '../file';
+jest.mock('../file');
+```
+#### To track calls
+```
+expect(method).toHaveBeenCalledTimes(1)
+expect(method).toHaveBeenCalledWith(something);
+```
+
+#### To return a value
+```
+method.mockReturnValue('')
+```
+
