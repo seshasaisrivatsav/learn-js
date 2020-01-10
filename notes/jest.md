@@ -1,5 +1,7 @@
 ## Jest handy notes
 
+### Mocking a promise
+
 ### Testing a promise
 
 There are several ways to do it 
