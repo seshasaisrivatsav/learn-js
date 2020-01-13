@@ -52,3 +52,16 @@ expect(method).toHaveBeenCalledWith(something);
 method.mockReturnValue('')
 ```
 
+### Mocking a module ([doMock](https://jestjs.io/docs/en/jest-object#jestdomockmodulename-factory-options))
+```
+
+jest.doMock('ctct-helpers', () => {
+  return {
+    __esModule: true,
+    default: 
+    getEnv: jest.fn().mockImplementation(() => {
+      return '.l1.';
+    }),
+  };
+});
+```
