@@ -1,7 +1,42 @@
 ## Jest handy notes
 
 ### Mocking a promise
+Source:
+```
+import getSomethingPromise from 'external-module';
 
+const testFn = params => {
+  const results = getSomethingPromise(params);
+  return results.promise.Response.then(data => {
+    if (data.info && data.info.length === 0) {
+      return false;
+    }
+    return true;
+  })
+};
+
+export { testFn }
+```
+Test:
+```
+describe('when testFn is called', () => {
+    afterEach(() => {
+      getSomethingPromise.mockClear();
+    });
+    describe('and the getCampaignData has any campaigns', () => {
+      beforeEach(() => {
+        getSomethingPromise.mockImplementation(() => ({
+          promise: {
+            Response: Promise.resolve({ info: [] }),
+          },
+        }));
+      });
+      it('it should return true ', async () => {
+        const exists = await testFn({ name: 'some campaign name' });
+        expect(exists).toBeTruthy();
+      });
+    });
+```
 ### Testing a promise
 
 There are several ways to do it 
