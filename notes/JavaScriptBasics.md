@@ -162,3 +162,37 @@ console.log('Writable: ' + configurableTest.writable);
 
 ```
 
+
+## Handy Functions/APIs
+
+### String functions
+#### Trim empty spaces
+```
+trim()
+```
+#### get Char At position
+```
+charAt()
+```
+#### Substr v/s Substring
+
+substr() - Get remaining from a given position
+```
+const str = "12345";
+console.log(str.substr(2)) // 345
+```
+substring() method returns the part of the string between the start and end indexes, or to the end of the string.
+```
+const str = "123456789";
+console.log(str.substring(2,4)) // 2 included 4 excluded
+```
+
+#### IndexOf
+```
+const str = "abc=123";
+const index = str.indexOf("="); //3
+
+console.log(str.substring(0, index)); //abc
+console.log(str.substring(index+1)); //123
+
+```
