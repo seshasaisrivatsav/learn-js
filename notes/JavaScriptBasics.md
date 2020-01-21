@@ -196,3 +196,7 @@ console.log(str.substring(0, index)); //abc
 console.log(str.substring(index+1)); //123
 
 ```
+
+### Versioning
+#### Major.Minor.Patch
+ `^` would normally allow drift in not just patch versions but also minors, up until the next major version. However the behavior is slightly different for projects on versions before v1.0.0. NPM assumes that v1.0.0 is the first "official" release of a library and that, until then, even patches could contain breaking changes. 
