@@ -197,6 +197,57 @@ console.log(str.substring(index+1)); //123
 
 ```
 
+### Bubbling v/s Capturing
+In HTML, we have parent and child.
+The argument to `addEventListener`
+`false` - Bubbling
+`true` - Capturing
+
+```html
+<p id ="parent">
+	Lorem <strong id="child">ipsum</strong> Pipsum
+</p>
+```
+
+#### Bubbling
+We go from child to parent. Inner most element to parent
+```js
+const parent = document.getElementById('parent');
+const child = document.getElementById('child');
+
+parent.addEventListener('click', () => {
+  console.log('parent')
+});
+
+
+child.addEventListener('click', () => {
+  console.log('child')
+});
+
+```
+- Now if we click `child` element, we'll get 'child' and 'parent' (Order matters)
+- Clicking on parent, we'll get 'parent'
+
+#### Capturing
+Goes from parent to child. The argument to event listener is `false` by default.
+`false` - Bubbling
+`true` - Capturing
+
+```
+parent.addEventListener('click', () => {
+  console.log('parent')
+}, true);
+
+
+child.addEventListener('click', () => {
+  console.log('child')
+}, true);
+
+```
+- Now if we click `child` element, we'll get 'parent' and 'child'
+- Clicking on parent, we'll get 'parent'
+
+
 ### Versioning
 #### Major.Minor.Patch
  `^` would normally allow drift in not just patch versions but also minors, up until the next major version. However the behavior is slightly different for projects on versions before v1.0.0. NPM assumes that v1.0.0 is the first "official" release of a library and that, until then, even patches could contain breaking changes. 
