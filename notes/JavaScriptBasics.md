@@ -247,6 +247,33 @@ child.addEventListener('click', () => {
 - Now if we click `child` element, we'll get 'parent' and 'child'
 - Clicking on parent, we'll get 'parent'
 
+### Break and Continue
+
+#### Break 
+statement "jumps out" of a loop.
+
+Outputs: 0,1,2
+```
+for (var i = 0; i < 5; i++ ) {
+	if (i === 3) {
+  	break
+  }
+ 
+  console.log(i)
+}
+```
+#### Continue
+Continue exits the loop for one iteration
+Outputs: 0,1,2,4
+```
+for (var i = 0; i < 5; i++ ) {
+	if (i === 3) {
+  	continue
+  }
+ 
+  console.log(i)
+}
+```
 
 ### Versioning
 #### Major.Minor.Patch
