@@ -100,3 +100,39 @@ jest.doMock('ctct-helpers', () => {
   };
 });
 ```
+
+### Mocking window
+
+Source
+```
+const navigate = url => {
+  window.location = url;
+};
+
+export default navigate;
+```
+
+
+Test
+```
+import navigate from './navigate';
+
+describe('Testing navigate', () => {
+  describe('when url is supplied to navigate', () => {
+    it('it should change the window.location', () => {
+      global.window = Object.create(window);
+      Object.defineProperty(window, 'location', {
+        value: {
+          href: 'http://old.com',
+        },
+        configurable: true,
+        writable: true,
+      });
+      expect(window.location.href).toEqual('http://old.com');
+      navigate('http://new.com');
+      expect(window.location).toEqual('http://new.com');
+    });
+  });
+});
+
+```
