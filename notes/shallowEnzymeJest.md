@@ -20,3 +20,11 @@ expect(wrapper.find(Dropdown).filter('[data-qe-id="qe-id"]')).toBeTruthy();
 ```
 
 2. Using 
+
+### Simulate
+
+Add data to input
+```
+nameInput = wrapper.find(...);
+nameInput.simulate('change', { target: { value: 'text' } });
+```
