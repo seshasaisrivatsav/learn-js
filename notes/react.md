@@ -1,5 +1,37 @@
 # React Concepts
 
+### useEffect
+
+#### ClassTraditional way
+```
+componentDidMount()
+componentDidUpdate()
+componentWillUnmount() -> Clean up code is return
+```
+
+#### Functional way
+All logic is placed here. Happens when a component is mounted and update happens. The `func` is triggered, every time component is rendered.
+
+```
+useEffect(func, [])
+```
+
+1. The first argument: Func -> A function that is triggered anytime props received and state changes
+2. The second argument: Array of dependencies -> To prevent rerenders for every prop/state change. Only when the passed argument changes, update.
+
+
+Equivalent of `componentWillUnmount` in `useEffect`
+
+```
+useEffect(() => {
+  //  logic
+
+  return () => {
+     // clean up code (similar to what you write in componentWillUnmount)
+  }
+ 
+}, [dependencies]);
+```
 
 ### Creating context
 CreatePoopContext.jsx
