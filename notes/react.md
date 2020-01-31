@@ -33,6 +33,9 @@ useEffect(() => {
 }, [dependencies]);
 ```
 
+#### Reusing hooks
+If a hook is used in multiple files, you can export the hook under hooks folder with `use<>` name. Import it in components of choice.
+
 ### Creating context
 CreatePoopContext.jsx
 ```js
