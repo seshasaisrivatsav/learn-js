@@ -196,6 +196,14 @@ console.log(str.substring(0, index)); //abc
 console.log(str.substring(index+1)); //123
 
 ```
+### Syntax
+```
+        ({
+          mock: {
+            calls: [[, deferreds]],
+          },
+        } = getSomeThing);
+```
 
 ### Bubbling v/s Capturing
 In HTML, we have parent and child.
