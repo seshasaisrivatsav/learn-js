@@ -8,6 +8,19 @@ componentDidMount()
 componentDidUpdate()
 componentWillUnmount() -> Clean up code is return
 ```
+#### componentWillUpdate
+Receives newProps, newState and is called *before* render method
+```
+componentWillUpdate(newProps, newState)
+```
+#### componentDidUpdate
+Receives previousProps, previousState for arguments and is called *after* render method
+```
+componentDidUpdate(previousProps, previousState)
+```
+#### componentWillUnmount
+is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
+
 
 #### Functional way
 All logic is placed here. Happens when a component is mounted and update happens. The `func` is triggered, every time component is rendered.
