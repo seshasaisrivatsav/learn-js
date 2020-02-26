@@ -1,5 +1,9 @@
 # React Concepts
 
+### General Guidelines
+- A component owning the state should be the one modifying it
+- 
+
 ### useEffect
 
 #### ClassTraditional way
