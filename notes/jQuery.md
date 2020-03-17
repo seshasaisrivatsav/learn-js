@@ -12,3 +12,4 @@ $( "#foo" ).on( "custom", function( event, param1, param2 ) {
 $( "#foo").trigger( "custom", [ "Custom", "Event" ] );
 
 ```
+The event object is always passed as the first parameter to an event handler. An array of arguments can also be passed to the .trigger() call, and these parameters will be passed along to the handler as well following the event object. 
