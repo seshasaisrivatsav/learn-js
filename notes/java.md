@@ -73,3 +73,13 @@ Arrays.stream(names)
 ### Explain `Collectors`
 
 ### How to write equals method? (by overriding)
+
+
+### DTO v/s DAO
+DTO - Data Transfer Object
+  - Transfer data between classes and modules of application
+  - DTO should only have private fields for your data, getters, setters and constructors
+  - Not recommended to have business logic. 
+  - Okay to have utils
+DAO - Data Access Object
+  - Encapsulate logic for retrieving, saving and updating data in storage
