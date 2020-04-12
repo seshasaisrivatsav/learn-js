@@ -74,6 +74,111 @@ Arrays.stream(names)
 
 ### How to write equals method? (by overriding)
 
+### Multithreading
+#### Creating a thread 
+```
+Thread t1 = new Thread()
+```
+Every thread needs a `run` method
+```
+class MyClass  extends Thread
+```
+#### Standard (by extending `Thread` Class)
+`extend Thread`
+Override `run` method
+`.start()` -> this triggers run method
+
+```
+class Hi extends Thread {
+  public void run () {
+    // logic to print hi 5 times
+  }
+}
+class Hello extends Thread {
+  public void run () {
+    // logic to print hello 5 times
+  }
+}
+
+public class ThreadDemo {
+  mainMethod {
+    Hi obj1 = new Hi();
+    Hello obj2 = new Hello();
+    
+    obj1.start();
+    obj2.start();
+    
+  }
+}
+```
+#### Using implementing Runnable Interface
+When your class already extends another class, use `Runnable`
+Runnable has `run` method, works same way as above
+`runnable` interface just has `run` method. It can be functional
+
+```
+class Hi implements Runnable {
+  public void run() { }
+
+}
+class Hello extends Thread {
+  public void run () {
+    // logic to print hello 5 times
+  }
+}
+
+public class ThreadDemo {
+  mainMethod {
+    Runnable obj1 = new Hi();
+    Runnable obj2 = new Hello();
+    
+   Thread t1 = new Thread(obj1);
+   Thread t2 = new Thread(obj2);
+   t1.start();
+   t2.start();
+    
+  }
+}
+
+```
+
+
+#### Using Lambda Expression
+- The logic of `Hi` and `Hello`, you can put it in `Runnable`
+```
+
+public class ThreadDemo {
+  mainMethod {
+    Runnable obj1 = new Runnable() 
+    {
+    public void run() { }
+    };
+
+    // Other way of writing it
+    Runnable obj2 = () -> { // logic inside run method  } 
+    
+    
+   Thread t1 = new Thread(obj1);
+   Thread t2 = new Thread(obj2);
+   Thread t3 = (() -> {//logic inside run});
+   t1.start();
+   t2.start();
+   t2.start();
+    
+  }
+}
+```
+
+#### Sleep, wait, notify
+```Thread.sleep(milliseconds)```
+
+
+
+### ExecutorService
+- Automatically provides a pool of threads and API for assigning tasks to it
+- ExecutorService can execute Runnable and Callable tasks.
+- 
+
 
 ### DTO v/s DAO
 DTO - Data Transfer Object
