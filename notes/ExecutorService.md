@@ -152,3 +152,47 @@ SingleThreadExecutor -> LinkedBlockingQueue
 CachedThreadPool -> Synchronous QUeue (Threads are unbounded, thus no need to store tasks. Synchronous queue is a queue with single slot)
 ScheduledTHreadPool -> DelayedWorkQueue (Special queue that deals with schedules/time delays)
 Custom -> ArrayBlockingQueue
+
+
+### Callable
+Future get is blocking. Main thread will be in blocking statue. 
+Be extra careful with fore loop job submissions. even if subsequent jobs are finished, if the first job isn't done, it'll wait.
+
+```
+public class Boop {
+  public static void main(String[] args) {
+    
+      // create pool
+      ExecutorService es = Executors.newFixedThreadPool(100);
+      // this takes runnable tasks
+      es.execute();
+      
+      // for callable tasks
+      // if the task takes long time, we have a future 
+      Future<Integer> future = es.submit(new Task());  // placeholder for value that arrives in future
+      
+      
+      // perform some operations and then access future
+      Integer result = future.get(); // this is a blocking operation (waits until future is ready)
+      
+      
+      // for 100 tasks
+      List<Future> allFutures = new ArrayList<>();
+      for (int i =0; i<100; i++) {
+         Future<Integer> future = es.submit(new Task());
+         allFutures.add(future)
+      }
+      loop through the futures and do the logic
+  }
+  
+  static class Task implements Callable<Integer> {
+    @Override
+    public Integer call() {
+      return new Random().next();
+    }
+  }
+  
+}
+```
+
+![Screen Shot 2020-04-13 at 8 59 16 AM](https://user-images.githubusercontent.com/19309898/79125443-35286080-7d6c-11ea-8f91-0c3f7772d472.png)
