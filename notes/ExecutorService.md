@@ -141,3 +141,14 @@ ExecutorService ser = Executors.newFixedThreadPool(100);
 | CorePoolSize          | constructor-arg    |  0     | constructor-arg  | 1  |
 | MaxPoolSize            |   same as corePoolSize  |  interger.MAX_VALUE     |  interger.MAX_VALUE | 1  |
 | KeepAliveTime|  0 sec    |   60 sec    | 60 sec   |  0 sec |
+
+
+
+Note: `allowCoreThreadTimeOut`
+
+### Queue types
+FixedThreadPool -> LinkedBlockingQueue (threads are limited, thus unbounded queue to store all tasks)
+SingleThreadExecutor -> LinkedBlockingQueue
+CachedThreadPool -> Synchronous QUeue (Threads are unbounded, thus no need to store tasks. Synchronous queue is a queue with single slot)
+ScheduledTHreadPool -> DelayedWorkQueue (Special queue that deals with schedules/time delays)
+Custom -> ArrayBlockingQueue
