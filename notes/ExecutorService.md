@@ -51,10 +51,11 @@ service.scheduleAtFixedRate(new Task(), 15, 10, SECONDS);
 
 // Waits for 15 seconds, wait for task to complete, then wait for 10 seconds
 service.scheduleWithFixedDelay(new Task(), 15, 10, SECONDS)
+
+newScheduledThreadPool(10)
+
 ```
 
-
-```newScheduledThreadPool(10)```
 4. `SingleThreadExectutor`
  ```newSingleThreadExecutor()``` -> all tasks passed to this Executor will be worked on by single thread. If a new task is passed to this before first task is finished, it will be queued up.
  
@@ -196,3 +197,6 @@ public class Boop {
 ```
 
 ![Screen Shot 2020-04-13 at 8 59 16 AM](https://user-images.githubusercontent.com/19309898/79125443-35286080-7d6c-11ea-8f91-0c3f7772d472.png)
+
+
+## SchedulingConfigurer
