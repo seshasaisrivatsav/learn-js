@@ -47,3 +47,9 @@ Company company = context.getBean("company", Company.class);
 assertEquals("High Street", company.getAddress().getStreet());
 assertEquals(1000, company.getAddress().getNumber());
 ```
+
+## Exceptions
+### UnsatisfiedDependencyException
+UnsatisfiedDependencyException gets thrown when, as the name suggests, some bean or property dependency isn't satisfied.
+
+This may happen when Spring application tries to wire a bean and cannot resolve one of the mandatory dependencies.
