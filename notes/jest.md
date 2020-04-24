@@ -1,5 +1,37 @@
 ## Jest handy notes
 
+### Mocking a module that returns promise
+
+#### Source
+```
+const somePromiseLibrary = new Promise(); // promise impl
+export default somePromiseLibrary;
+export { default as somePromiseLibraryName };
+```
+
+#### Test
+Make sure you don't import it here
+```
+const mockModule = () => {
+  const tmp = {};
+  const somePromiseLibraryName = new Promise((resolve, reject) => {
+    tmp.resolve = resolve;
+    tmp.reject = reject;
+  });
+  Object.assign(somePromiseLibraryName, tmp);
+
+  let somePromiseLibraryModule;
+  jest.isolateModules(() => {
+    somePromiseLibraryModule = require('somePromiseLibraryName'); // eslint-disable-line global-require
+  });
+  somePromiseLibraryModule.somePromiseLibraryName = somePromiseLibraryName;
+
+  return somePromiseLibraryModule;
+};
+
+```
+
+
 ### Mocking a promise
 Source:
 ```
