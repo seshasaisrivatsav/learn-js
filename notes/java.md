@@ -142,6 +142,8 @@ public class ThreadDemo {
 
 ```
 
+### Override vs Overload
+ Overriding indicates that the subclass is replacing inherited behavior. Overloading is when a subclass is adding new behavior.
 
 #### Using Lambda Expression
 - The logic of `Hi` and `Hello`, you can put it in `Runnable`
