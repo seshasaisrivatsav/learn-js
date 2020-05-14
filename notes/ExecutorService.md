@@ -1,3 +1,45 @@
+### Use case of `invokeAny`
+
+Depending on the execution time, set the timeout accordingly
+```
+    @Test
+    public void testMe() {
+        long EXECUTOR_SERVICE_TIMEOUT = 1001L;
+
+
+        String success ;
+        RandomTask worker = new RandomTask();
+        List<RandomTask> workerList = Arrays.asList(worker);
+        ExecutorService ex = Executors.newSingleThreadExecutor();
+        try {
+            ex.invokeAny(workerList, EXECUTOR_SERVICE_TIMEOUT, TimeUnit.MILLISECONDS);
+            success = "success";
+        } catch (TimeoutException te) {
+            success = "timeout";
+        } catch (Exception e) {
+            if (e.getCause() instanceof TimeoutException) {
+                success = "timeout";
+            }
+            success = "failure";
+        }
+        System.out.println(success);
+
+    }
+
+
+    public class RandomTask implements Callable<Boolean> {
+        long THREAD_SLEEP_TIME = 1000L;
+        @Override
+        public Boolean call() {
+            try {
+                Thread.sleep(THREAD_SLEEP_TIME);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+    }
+    ```
 
 ### ExecutorService 
 Video https://www.youtube.com/watch?v=sIkG0X4fqs4
