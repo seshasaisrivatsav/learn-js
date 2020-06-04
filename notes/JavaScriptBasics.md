@@ -205,6 +205,38 @@ console.log(str.substring(index+1)); //123
         } = getSomeThing);
 ```
 
+### EVENT
+
+#### Event 
+The Event interface represents an event which takes place in the DOM.
+
+### EventTarget
+is a DOM interface implemented by objects that can receive events and may have listeners for them.
+Element, Document, and Window are the most common event targets, but other objects can be event targets, too. For example XMLHttpRequest, AudioNode, AudioContext, and others.
+Many event targets (including elements, documents, and windows) also support setting event handlers via onevent properties and attributes.
+
+
+#### addEventListener
+Many DOM elements can be set up to listen for events. Using
+```
+EventTarget.addEventListener()
+```
+The EventTarget method addEventListener() sets up a function that will be called whenever the specified event is delivered to the target. Common targets are Element, Document, and Window, but the target may be any object that supports events (such as XMLHttpRequest).
+
+#### dispatchEvent
+Dispatches an Event at the specified EventTarget, (synchronously) invoking the affected EventListeners in the appropriate order. The normal event processing rules (including the capturing and optional bubbling phase) also apply to events dispatched manually with dispatchEvent().
+
+
+```
+var event = new Event('build');
+
+// Listen for the event.
+elem.addEventListener('build', function (e) { /* ... */ }, false);
+
+// Dispatch the event.
+elem.dispatchEvent(event);
+```
+
 ### Bubbling v/s Capturing
 In HTML, we have parent and child.
 The argument to `addEventListener`
