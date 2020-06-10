@@ -96,6 +96,17 @@ If you just want to see if a promise is resolved or failed, then do this.
     });
   });
 ```
+### Mock Function Mock Calls (Function passed as an argument to a mock function)
+```
+const paramFn = mockFn.mock.calls[callIndex][parameterIndex];
+paramFn();
+```
+or
+```
+mockFn.mock.calls[callIndex][parameterIndex]();
+```
+
+https://jestjs.io/docs/en/mock-function-api#mockfnmockcalls
 
 ### Mocking an import method
 
