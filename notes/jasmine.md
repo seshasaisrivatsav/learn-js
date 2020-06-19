@@ -46,3 +46,9 @@ In order to create a mock with multiple spies, use jasmine.createSpyObj and pass
   });
   
 ```
+
+### return value
+```
+spyOn(something, "something").and.returnValue()
+```
+When called with, then return value
