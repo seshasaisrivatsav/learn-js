@@ -179,3 +179,7 @@ describe('Testing navigate', () => {
 });
 
 ```
+
+## Using jest.mock __esModule v/s jest.mock(something)
+- jest.mock() with __esModule  - to mock modules that have default export
+- if there are require styled imports, then you don't need `__esModule`
