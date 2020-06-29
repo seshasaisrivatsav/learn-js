@@ -36,6 +36,8 @@ getRes().then(res => { console.log(res) })
 ```
 
 ### [Bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+Bind method creates a new function that when called has it's this keyword set to provided value.
+
 Note: Bind only works with functions, if you have arrow functions, then see the below solution
 #### Bind for function
 ```js
@@ -54,7 +56,7 @@ console.log(bound(1,2))
 #### Bind for arrow function
 ```js
 let fun = (a, b) => {
-	return a + b
+  return a + b
 }
 
 let bound = fun.bind(null, 1, 2);
