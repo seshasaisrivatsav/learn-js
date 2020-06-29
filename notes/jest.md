@@ -96,6 +96,12 @@ If you just want to see if a promise is resolved or failed, then do this.
     });
   });
 ```
+
+## Test if promise throws an error
+```
+expect(promise).rejects.toThrow("promise error");
+```
+
 ### Mock Function Mock Calls (Function passed as an argument to a mock function)
 ```
 const paramFn = mockFn.mock.calls[callIndex][parameterIndex];
@@ -188,3 +194,10 @@ const { comething } = jest.requireActual('./module');
 ## Using jest.mock __esModule v/s jest.mock(something)
 - jest.mock() with __esModule  - to mock modules that have default export
 - if there are require styled imports, then you don't need `__esModule`
+
+
+## advance timer
+API is called, all timers are advanced by msToRun milliseconds. All pending "macro-tasks" that have been queued via setTimeout()
+```
+ jest.advanceTimersByTime(1000) //ms
+ ```
