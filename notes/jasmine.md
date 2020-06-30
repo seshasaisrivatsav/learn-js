@@ -46,7 +46,12 @@ In order to create a mock with multiple spies, use jasmine.createSpyObj and pass
   });
   
 ```
+### and.callFake
 
+By chaining the spy with and.callFake, all calls to the spy will delegate to the supplied function.
+```
+jasmine.createSpy("spyName").and.callFake(function() { return "something"; } ) 
+```
 ### return value
 ```
 spyOn(something, "something").and.returnValue()
