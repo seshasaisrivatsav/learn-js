@@ -195,6 +195,10 @@ const { comething } = jest.requireActual('./module');
 - jest.mock() with __esModule  - to mock modules that have default export
 - if there are require styled imports, then you don't need `__esModule`
 
+## jest.mock
+```
+ jest.fn().mockName("mockFunctionName")
+```
 
 ## advance timer
 API is called, all timers are advanced by msToRun milliseconds. All pending "macro-tasks" that have been queued via setTimeout()
