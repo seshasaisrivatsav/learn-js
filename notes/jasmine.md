@@ -57,3 +57,33 @@ jasmine.createSpy("spyName").and.callFake(function() { return "something"; } )
 spyOn(something, "something").and.returnValue()
 ```
 When called with, then return value
+
+### Testing `$q.defer()` and `$q.all`
+
+```
+var $qMock;
+var mockDefer = function () {
+ var value;
+ return {
+  resolve: function (arg) { value = arg }
+  promise: { then: function (fn) { fn(value) } } 
+  reject: { then: function (fn) { fn(value) } } 
+ }
+}
+
+mockAll = function () {
+ return {
+  then: function(fn) { fn(); } 
+ }
+}
+$qMock = { defer: mockDefer, all: mockAll }  
+```
+In the tests, inject your own $q to module
+```
+module({ 
+ $q: $qMock
+})
+```
+
+
+
