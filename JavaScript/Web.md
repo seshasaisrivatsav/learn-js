@@ -31,3 +31,8 @@ If window A opens a window B, then window B can obtain reference to window A by 
 and with the reference Awindow.reference.postMessage.
 The argumment passed to postMessage must be of type `Event`
 And window A must have an event listener
+
+
+## document referrer
+
+## History API
