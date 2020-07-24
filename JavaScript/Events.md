@@ -70,7 +70,7 @@ btn.removeEventListener('click', bgChange);
 
 
 ## Event bubbling and capture
-- These are MECHANISMS that describe what happens when two handlers of same event type areactivated on one element.
+- These are MECHANISMS that describe what happens when two handlers of same event type are activated on one element.
 
 TODO: Continue here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_handler_properties
 
