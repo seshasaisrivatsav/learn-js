@@ -13,6 +13,11 @@ is a DOM interface implemented by objects that can receive events and may have l
 Element, Document, and Window are the most common event targets, but other objects can be event targets, too. For example XMLHttpRequest, AudioNode, AudioContext, and others.
 Many event targets (including elements, documents, and windows) also support setting event handlers via onevent properties and attributes.
 
+Methods on `EventTarget`
+1. `addEventListerner()` - Registers an event handler of a specific event type on the `EventTarget`.
+2. `removeEventListener()` - Removes an event listener from `EventTarget`
+3. `dispatchEvent()` - Dispatches an event to this `EventTarget`
+
 ## Event handler = Event Listener
  block of code (usually a JavaScript function that you as a programmer create) that will be run when the event fires. When such a block of code is defined to be run in response to an event firing, we say we are `registering an event handler`
 
