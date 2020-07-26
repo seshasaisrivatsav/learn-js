@@ -8,6 +8,17 @@ DOM is an API that represents and interacts with any HTML or XML document
 DOM is document model loaded in browser and representing document as a node tree where each node represents part of the document (eg: Element, text or comment)
 more - https://developer.mozilla.org/en-US/docs/Glossary/DOM
 
+
+## Flow
+
+`EventTarget` <- `Node` <- `Element` <- `HtmlElement`
+`EventTarget` <- `Node` <- `Document`
+
+- Event Target = EventTarget is a DOM interface implemented by objects that can receive events and may have listeners for them.
+- Node = is a key base class upon which many other DOM API objects are based, thus letting those object types to be used similarly and often interchangeably
+- Element = Element is the most general base class from which all element objects (i.e. objects that represent elements) in a Document inherit. It only has methods and properties common to all kinds of elements
+- Document = The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. The DOM tree includes elements such as <body> and <table>, among many others.
+
 ## MessageEvent
 - This is an interface that represents a message received by a target object
 https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent
