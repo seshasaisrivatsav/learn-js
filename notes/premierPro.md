@@ -9,8 +9,11 @@
 - Up Key - takes
 - Down Key - takes to edit point
 - J,K,L - Shuttle through timeline Backwards, Stop, and Forwards Respectively
+- Ctrl + K - Clip a clip
+- D - Selects where we have pointer
+- Shift + Del - Delete Selected Clip, and Bring Forward Clips back (need to have the clips selected for this to work) - Called Lift and Extract
+- Ctrl + Shift + Z - Redo
 - Ctrl + R - Speed and Duration on Selected Clip 
-- - Shift + Del - Delete Selected Clip, and Bring Forward Clips back
 - I,O - Set in and Out Points Respectively
 - ; - Delete Selection With In and Out Points
 - ' - Delete Selection With In and Out Points, and Bring forward Clips Back
@@ -18,3 +21,16 @@
 - Edit Mode + Ctrl + Arrow Key - Move the edit point backwards or forwards
 - Ctrl + R - Speed and Duration on Selected Clip 
 - G - Audio Gain on Selected Clip 
+
+### In line select and remove
+- Click i - Creates inpoint
+- Shift + ->
+- Click o - creates outpoint
+
+- ; - Delete Selection With In and Out Points
+- ' - Delete Selection With In and Out Points, and Bring forward Clips Back
+
+### In line remove and pull clips forward
+- Ctrl + K to make a cut
+- D - to select audio and video
+- Shift + Del - to delete selected clip and bring forward clips back
