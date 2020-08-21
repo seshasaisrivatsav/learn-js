@@ -22,6 +22,10 @@
 - Ctrl + R - Speed and Duration on Selected Clip 
 - G - Audio Gain on Selected Clip 
 
+### Clip
+Ctrl + K - to trim video
+Shift + Ctrl + K - to trim audio and video 
+
 ### In line select and remove
 - Click i - Creates inpoint
 - Shift + ->
