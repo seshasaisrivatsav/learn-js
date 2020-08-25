@@ -38,3 +38,26 @@ Shift + Ctrl + K - to trim audio and video
 - Ctrl + K to make a cut
 - D - to select audio and video
 - Shift + Del - to delete selected clip and bring forward clips back
+
+# Color
+Do it at the end
+
+## Color Correcting
+Changing a single shot
+- skin = 70
+
+## Color grading
+Applying LUT across entire video
+- Create Adjustment Layer
+- Go to Creative Tab
+
+## LumetricScipes
+Open Lumetric Scopes Window (in color)
+Waveform Type > Luma
+- the scopes must be from 0 to 100
+- Highlights are from 90 to 100
+- Shadows must be below 10
+
+### If two clips have same color 
+You can copy paste the scope
+
