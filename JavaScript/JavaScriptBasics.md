@@ -235,6 +235,13 @@ for (var i = 0; i < 5; i++ ) {
 }
 ```
 
+### Source Map
+- Source map is a way to map a combined/minified file back to an unbuilt state.
+- When an app is deployed to prod, along with minifying and combing your JS files, you generate a source map which holds info about original files
+- When you query a certain line and column number in your generated JS, you can do a lookup in source map which returns original location
+
+
+
 ### Versioning
 #### Major.Minor.Patch
  `^` would normally allow drift in not just patch versions but also minors, up until the next major version. However the behavior is slightly different for projects on versions before v1.0.0. NPM assumes that v1.0.0 is the first "official" release of a library and that, until then, even patches could contain breaking changes. 
