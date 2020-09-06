@@ -61,3 +61,9 @@ Waveform Type > Luma
 ### If two clips have same color 
 You can copy paste the scope
 
+### Removing gaps between multiple clips on time line
+- Create new color matte
+- Drag it to Time line V2 (if clips are on V1)
+- Then Move all clips from V1 to V2 to fill gaps
+- Move clips from V2 to V1 (while selection still holds)
+- Select all color matte clips in v2 and ripple delete)
