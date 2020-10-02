@@ -245,3 +245,16 @@ for (var i = 0; i < 5; i++ ) {
 ### Versioning
 #### Major.Minor.Patch
  `^` would normally allow drift in not just patch versions but also minors, up until the next major version. However the behavior is slightly different for projects on versions before v1.0.0. NPM assumes that v1.0.0 is the first "official" release of a library and that, until then, even patches could contain breaking changes. 
+
+
+### three dots (...) Spread operator, rest params
+
+```
+var obj1 = { foo: 'bar', x: 42 };
+var obj2 = { foo: 'baz', y: 13 };
+
+var clonedObj = { ...obj1 };
+// Object { foo: "bar", x: 42 }
+
+var mergedObj = { ...obj1, ...obj2 };
+```
