@@ -2,6 +2,73 @@
 
 ### Mocking a module that returns promise
 
+## Jest Mock Basics
+### Loading modules under test
+- Why do we need to reload modules
+- Ans: If modules are reloaded in isolation, then if we need to mock or change a dependency that is not a Function or to test logic that occurs inline a module
+
+if we do the below in test
+```
+import {functionName} from "./moduleUnderTest";
+jest.mock("./moduleUnderTest");
+```
+Then, jest behind the scenes does this
+```
+jest.mock("./moduleUnderTest")
+import {functionName} from "./moduleUnderTest"
+```
+
+##### jest.mock calls are hoisted at the top of the file
+
+##### To Tackle this we can use jest.isolateModules helpers
+```
+const loadModulesUnderTest = async modulesToBeLoaded => {
+  const modulePromises = [];
+  jest.isolateModules(() => {
+    modulePromises.push(...modulesToBeLoaded());
+  });
+  const moduleInstances = await Promise.all(modulePromises);
+  const moduleExports = Object.assign({}, ...moduleInstances, { default: [] });
+  moduleInstances.forEach(moduleInstance => {
+    moduleExports.default.push(moduleInstance.default);
+  });
+  return moduleExports;
+};
+
+```
+
+##### Using the above helper
+
+At the top of spec file
+```
+let moduleDefault;
+let namedExport;
+
+const loadModules = async () -> {
+  // Mock any modules you need
+  jest.mock("../module", () => {
+    __esModule: true,
+    default: jest.fn()
+  })
+  
+  jest.mock("../module1/something", () => {
+    __esModule: true,
+    namedExport: jest.fn(),
+  })
+  
+  const exports = await loadModulesUnderTest(() => [
+    require("../module1"),
+    require("../module1/something"),
+  ]);
+  
+  ({namedExport} = exports);
+  [, moduleDefault] = exports.default;
+}
+
+```
+
+
+
 #### Source
 ```
 const somePromiseLibrary = new Promise(); // promise impl
