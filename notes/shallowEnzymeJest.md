@@ -28,3 +28,12 @@ Add data to input
 nameInput = wrapper.find(...);
 nameInput.simulate('change', { target: { value: 'text' } });
 ```
+To make sure that the simulation takes effect
+```
+setImmediate(() => {
+          wrapper.update();
+          done();
+});
+```
+
+        
