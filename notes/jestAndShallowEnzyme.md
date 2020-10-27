@@ -294,7 +294,12 @@ import { mount } from 'enzyme';
 expect(wrapper.find(Dropdown).filter('[data-qe-id="qe-id"]')).toBeTruthy();
 ```
 
-2. Using 
+2. Using their type
+
+```
+ title = wrapper.find("h3").filter('[data-qe-id="signup-blocker-dialog-title"]');
+ content = wrapper.find("p").filter('[data-qe-id="signup-blocker-dialog-content"]');
+```
 
 ### Simulate
 
@@ -306,8 +311,8 @@ nameInput.simulate('change', { target: { value: 'text' } });
 To make sure that the simulation takes effect
 ```
 setImmediate(() => {
-          wrapper.update();
-          done();
+  wrapper.update();
+  done();
 });
 ```
 
