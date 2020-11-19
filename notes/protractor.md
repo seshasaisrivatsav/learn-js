@@ -25,3 +25,15 @@ return new Promise(resolve => {
     }
   });
 ```
+
+### check if element is not on page
+```
+$EC.stalenessOf
+```
+
+### Check if we are on a URL 
+```
+  await browser.wait(EC.urlContains(expectedUrl), timeout).then(res => {
+ 
+    expect(res).toBeTruthy();
+```
