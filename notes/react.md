@@ -4,6 +4,18 @@
 - A component owning the state should be the one modifying it
 - 
 
+### setState
+setState - passing only necessary arguments
+```
+setState(prev => {
+  return {
+    ...prev, 
+    changedState,
+    something: value,
+  }
+})
+```
+
 ### useEffect
 
 #### ClassTraditional way
@@ -52,6 +64,10 @@ useEffect(() => {
 
 #### Reusing hooks
 If a hook is used in multiple files, you can export the hook under hooks folder with `use<>` name. Import it in components of choice.
+
+## Context
+- Context is used when we don't want to pass things down in props
+- When react renders a component that subscribes to a context, it will read the current context value from closest matching `Provider` in the tree.
 
 ### Creating context
 CreatePoopContext.jsx
