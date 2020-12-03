@@ -69,7 +69,7 @@ If a hook is used in multiple files, you can export the hook under hooks folder 
 - Context is used when we don't want to pass things down in props
 - When react renders a component that subscribes to a context, it will read the current context value from closest matching `Provider` in the tree.
 - React just compares old and new context using `===`
-
+- If provided context doesn't have value, it'll use defaultValue
 
 ### Provider
 - Every context object comes with a "Provider React component" that allows consuming components to subscribe to context changes
@@ -79,10 +79,6 @@ If a hook is used in multiple files, you can export the hook under hooks folder 
 ### Consumer
 - A React Component that subscribes to context changes
 - Allows to subscribe to a context within a function component
-
-
-### useContext
-- useContext - takes in a context argument and gives value of nearest provider
 
 ### Creating context
 CreatePoopContext.jsx
@@ -96,7 +92,6 @@ const CreatePoopContext = createContext({
 });
 export default CreatePoopContext;
 ```
-
 
 CreatePoopProvider.jsx
 ```js
