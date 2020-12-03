@@ -80,6 +80,10 @@ If a hook is used in multiple files, you can export the hook under hooks folder 
 - A React Component that subscribes to context changes
 - Allows to subscribe to a context within a function component
 
+
+### useContext
+- useContext - takes in a context argument and gives value of nearest provider
+
 ### Creating context
 CreatePoopContext.jsx
 ```js
@@ -92,6 +96,7 @@ const CreatePoopContext = createContext({
 });
 export default CreatePoopContext;
 ```
+
 
 CreatePoopProvider.jsx
 ```js
