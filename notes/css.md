@@ -241,8 +241,7 @@ In the below example we can see that the element is absolutely positioned 0px fr
 ```
 
 ## Pseudo classes
-![image](https://user-images.githubusercontent.com/19309898/107386116-8bb41780-6ac1-11eb-87f3-f5f2e7c5796d.png)
-
+![image](https://user-images.githubusercontent.com/19309898/107411759-e73fce80-6adc-11eb-8c1a-58373c267c40.png)
 ![image](https://user-images.githubusercontent.com/19309898/107386212-9ec6e780-6ac1-11eb-986f-c1809200db4a.png)
 
 ## Pseudo Elements
