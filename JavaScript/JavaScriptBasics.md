@@ -117,6 +117,19 @@ const {
 console.log(res); // something
 ```
 
+- Destructuring 
+```
+let ctctUiData = {
+	headerMessage: "head",
+  systemMessage: "system",
+}
+
+
+const { headerMessage: res, systemMessage: resTwo } = ctctUiData;
+
+console.log(res); // head
+console.log(resTwo); // system
+```
 
 ### Using curly braces
 
