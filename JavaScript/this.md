@@ -1,7 +1,9 @@
 # This
 
-## Scope / Execution contenxt
-the scope in which a line is being executed. JS has stack of execution contexts and the EXs present at top of this stack is the one being executed. the object `this` refers to changes every time EC is changed.
+## Scope / Execution context
+- the scope in which a line is being executed
+- JS has stack of execution contexts and the EXs present at top of this stack is the one being executed
+- the object `this` refers to changes every time EC is changed.
 
 ### this by default refers to Global Object
 Returns true

@@ -1,6 +1,6 @@
 ## JavaScript Publish Subscribe
 
-```
+```js
 const listOfSubscriptions = [];
 
 // to add to listOfSubscriptions
