@@ -1,5 +1,5 @@
 /*
-Have circle and sqyare have same prototype methods.
+Have circle and square have same prototype methods.
 Solution: Create a shape object 
 */
 

@@ -83,7 +83,7 @@ If a hook is used in multiple files, you can export the hook under hooks folder 
 ### Creating context
 CreatePoopContext.jsx
 ```js
-import { createContext } from 'react';
+import { createContext } from 'JavaScript/react';
 
 const CreatePoopContext = createContext({
   isOpen: false, // 
@@ -95,7 +95,7 @@ export default CreatePoopContext;
 
 CreatePoopProvider.jsx
 ```js
-import React, { useState } from 'react';
+import React, { useState } from 'JavaScript/react';
 import PropTypes from 'prop-types';
 import CreatePoopContext from './CreatePoopContext';
 
