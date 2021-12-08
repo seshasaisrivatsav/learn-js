@@ -6,7 +6,9 @@
 |:--------------------------:|---------------------|------------------------------------|
 | Has function scope         | has block scope     | has block scope                    |
 | it dies at end of function |                     | one time declaration               |
-| var gets hoisted           | doesn't get hoisted | can modify values but not reassign |
+| var gets hoisted to top, initialized as undefined | hoisted to top, and not initialized | can modify values but not reassign |
+|access before assignment gives undefined| access before assignment gives reference errors     | has block scope                    |
+| var can be redeclared      | can't be redeclared | can modify values but not reassign |
 |            | Used with primitive data types | used when we don't want mutation. used for objects |
 
 
