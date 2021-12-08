@@ -4,6 +4,7 @@
 | Javascript topics | Description |
 | :------------ | :------------ |
 | [JavaScript Basics](JavaScript/JavaScriptBasics.md) | Promises, bind, destructuring, handy helpers, versioning, source map  |
+| [JavaScriptClassNotes.md](JavaScript/JavaScriptClassNotes.md) | Notes taken during class - basics of JS |
 | [Closure.md](JavaScript/Closure.md) | closure with examples |
 | [this](JavaScript/this.md) | JavaScript this |
 | [Object Oriented JavaScript](JavaScript/objectOrientedJavaScript.md) | method call, final call, strict mode, constructors, instances, private methods (weakmaps), primitives v/s objects. Scope v/s closure, getters and setters, prototype v/s instance members, mixins, inheritance, writable/enumerable/configurable, method overriding, super, modules, tooling, babel, webpack |
@@ -19,6 +20,7 @@
 | [jasmine](JavaScript/jasmine.md) | create spy, create spy object |
 | [css.md](JavaScript/css.md) | desc |
 | [xx](JavaScript/xx) | desc |
+
 
 | Misc topics | Description |
 | :------------ | :------------ |
