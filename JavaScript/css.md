@@ -5,7 +5,7 @@
 - Display specifies type of rendering box
 - Types
     1. Block - Take entire width `div, p, h1, ul, li, canvas`
-    2.Inline - Can start any where on a line `span, input, button, img`
+    2. Inline - Can start any where on a line `span, input, button, img`
     3. Grid - Block level element with inner content in grid
     4. Flex - Block level element with inner content in flexbox
     5. Inline-block - Inline but height and width can be specified. Can be used with Grid, Flex, Table as they're block
