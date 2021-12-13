@@ -1,19 +1,19 @@
 
 ## Display v/s Position v/s Float
 ### Display 
-    - When you create an element to display on page, it renders as a box and we see how to position.
-    - Display specifies type of rendering box
-    - Types
-      1. Block - Take entire width `div, p, h1, ul, li, canvas`
-      2. Inline - Can start any where on a line `span, input, button, img`
-      3. Grid - Block level element with inner content in grid
-      4. Flex - Block level element with inner content in flexbox
-      5. Inline-block - Inline but height and width can be specified. Can be used with Grid, Flex, Table as they're block
-      6. None - Removes element
+- When you create an element to display on page, it renders as a box and we see how to position.
+- Display specifies type of rendering box
+- Types
+    1. Block - Take entire width `div, p, h1, ul, li, canvas`
+    2.Inline - Can start any where on a line `span, input, button, img`
+    3. Grid - Block level element with inner content in grid
+    4. Flex - Block level element with inner content in flexbox
+    5. Inline-block - Inline but height and width can be specified. Can be used with Grid, Flex, Table as they're block
+    6. None - Removes element
+
 ```html
 <p> line 1 - block element</p>
 <h1> line 1 - block element</h1>
-
 <span>same line</span><input type="text" placeholder='same line' />
 ```
 ### Position 
