@@ -1,3 +1,20 @@
+## The CSS Box Model
+<img src="https://user-images.githubusercontent.com/19309898/146032639-7dfe6a63-87ce-45e3-91b4-105aea473a69.png" height="200px" />
+
+- Margin and Padding are always parts of the ement
+- To remember: Photo is the content, Matting is the padding, frame moulding is theborder, wall is viewport. Space between two frames is margin.
+- Using Margin
+    - Use margin when you want to space an element in relationship to other elements on the wall
+    - Margin doesn't change size of the element
+    - Outer space of element
+    - margin: auto -> valid
+    - margin can be non negative
+- Using Padding
+    -  Use padding when you want to adjust the appearance of element it self. 
+    -  Padding will make element bigger
+    -  Inner space of element
+    -  padding: auto -> invalid
+    -  padding can't be non negative
 
 ## Display v/s Position v/s Float
 ### Display 
