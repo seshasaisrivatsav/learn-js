@@ -1,5 +1,14 @@
 <h1>JavaScript Basics</h1>
 
+### Map v/s Reduce v/s ForEach
+- `ForEach` - Alternative for for loop. Improves readability. Each loop has it's own scope
+- `map` transforms elements in to array
+- `filter` - to select subset of multiple elements from array
+- `find` - to select single element
+- `reduce` to derive a single value from multiple elements
+
+Note: `map` is faster than `forEach`
+
 ### Promise, async, await example
 Create a promise and get result async
 ```js
