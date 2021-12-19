@@ -377,8 +377,8 @@ m.set(x, "object inserted").set(y, "array inserted").set(z, "null inserted")
 // Converts map to array
 console.log([...m])
  ```
-## Function declaration v/s function expression v/s anonymous function
-###Function Declaration
+## Function Types - Function declaration v/s function expression v/s anonymous function v/s arrow function
+### Function Declaration
 * Why not to use function declarations
 ```javascript
 function add (a,b) {
@@ -400,8 +400,14 @@ const add = function (x,y) {
 }
 ```
 
+### Anonymous Function:
+```javascript
+const add = function (x, y) {
+   return x + y;
+}
+```
 
-### Arrow function / Anonymous function
+### Arrow Function:
 ```
 const add = (x, y) => {
     return x+y;
