@@ -9,6 +9,24 @@
 
 Note: `map` is faster than `forEach`
 
+
+```javascript
+// Find word lengths
+var words = ["the", "quick", "brown", "fox"];
+
+// 1. using forEach - you can't use return
+const results = [];
+words.forEach(word => {
+  results.push(word.length);
+});
+console.log(results);
+
+// 2. using map - you can `return`
+console.log(words.map(word => {
+  return word.length;
+}));
+```
+
 ### Promise, async, await example
 Create a promise and get result async
 ```js
