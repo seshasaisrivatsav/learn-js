@@ -1,7 +1,7 @@
 ## Events
 
-Source: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
-[Bubbling and Capture](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture)
+- [Source Events MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+- [Bubbling and Capture](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture)
 
 ## Event
 - events are actions or occurrences that happen in the system you are programming.
