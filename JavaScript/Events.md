@@ -1,7 +1,7 @@
 ## Events
 
 Source: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
-
+[Bubbling and Capture](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture)
 
 ## Event
 - events are actions or occurrences that happen in the system you are programming.
@@ -37,7 +37,8 @@ EventTarget.addEventListener()
 The EventTarget method addEventListener() sets up a function that will be called whenever the specified event is delivered to the target. Common targets are Element, Document, and Window, but the target may be any object that supports events (such as XMLHttpRequest).
 
 #### dispatchEvent
-Dispatches an Event at the specified EventTarget, (synchronously) invoking the affected EventListeners in the appropriate order. The normal event processing rules (including the capturing and optional bubbling phase) also apply to events dispatched manually with dispatchEvent().
+- Dispatches an Event at the specified EventTarget, (synchronously) invoking the affected EventListeners in the appropriate order.
+- The normal event processing rules (including the capturing and optional bubbling phase) also apply to events dispatched manually with dispatchEvent().
 
 ```
 var event = new Event('build');
@@ -52,16 +53,16 @@ elem.dispatchEvent(event);
 
 ## addEventListener() and removeEventListener()
 
-```
+```javascript
 const b = document.querySelector('button');
 
 b.addEventListener('click', () => {
-	console.log('clicked')
+  console.log('clicked')
 })
 ```
 
 Removal is useful for complex larger programs
-```
+```javascript
 btn.removeEventListener('click', bgChange);
 ```
 
@@ -85,13 +86,13 @@ The argument to `addEventListener`
 
 ```html
 <p id ="parent">
-	Lorem <strong id="child">ipsum</strong> Pipsum
+  Lorem <strong id="child">ipsum</strong> Pipsum
 </p>
 ```
 
 #### Bubbling
 We go from child to parent. Inner most element to parent
-```js
+```javascript
 const parent = document.getElementById('parent');
 const child = document.getElementById('child');
 
@@ -103,17 +104,16 @@ parent.addEventListener('click', () => {
 child.addEventListener('click', () => {
   console.log('child')
 });
-
 ```
 - Now if we click `child` element, we'll get 'child' and 'parent' (Order matters)
 - Clicking on parent, we'll get 'parent'
 
 #### Capturing
-Goes from parent to child. The argument to event listener is `false` by default.
+- Goes from parent to child. The argument to event listener is `false` by default.
 `false` - Bubbling
 `true` - Capturing
 
-```
+```javascript
 parent.addEventListener('click', () => {
   console.log('parent')
 }, true);
@@ -124,5 +124,6 @@ child.addEventListener('click', () => {
 }, true);
 
 ```
+
 - Now if we click `child` element, we'll get 'parent' and 'child'
 - Clicking on parent, we'll get 'parent'
