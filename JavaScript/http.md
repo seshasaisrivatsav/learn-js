@@ -25,11 +25,17 @@ http://myapp.example.com
 ### CORS
 - Cross Origin Resource Sharing
 - A mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
 ####  CORS ERRORS
 Access to `XMLHttpRequest` at `https://app.blab` from origin `https://poop` has been blocked by CORS policy.
 Response to preflight request doesn't pass access control check. No `Access-Control-Allow-Origin` header is present on the requested resource
 
+- Request from one origin to another, we need to tell the browser, that we allow requests from other URLs
+- By default only allowed is same 
+- we need to set header **access-control-allow-origin**
+**OPTIONS**
+- Pre flight request checks if we're allowed to do it. In response headers, we can see the access control allow methods, so we can also allow specific ethods
 #### XMLHttpRequest
 XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. XMLHttpRequest is used heavily in AJAX programming.
 
