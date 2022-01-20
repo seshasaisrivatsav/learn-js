@@ -28,6 +28,12 @@ Methods
 - notify
 Can you
 
+## Scope
+Scope is the binding part between HTML and the JavaScript (Controller)
+### Scope v/s rootScope 
+- Scope = controller specific
+- rootscope - global
+
 ## $rootScope.$digest , $scope.$apply()
 https://www.sitepoint.com/understanding-angulars-apply-digest/
 - It's the digest cycle where watchers are dired
