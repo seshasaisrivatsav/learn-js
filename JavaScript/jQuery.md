@@ -13,3 +13,40 @@ $( "#foo").trigger( "custom", [ "Custom", "Event" ] );
 
 ```
 The event object is always passed as the first parameter to an event handler. An array of arguments can also be passed to the .trigger() call, and these parameters will be passed along to the handler as well following the event object. 
+
+## mouseover
+```javascript
+$().mouseover(); // when mouse moves over something
+$().mouseover(function() {})
+$().mouseout(function() {});
+
+```
+
+## hover
+```javascript
+hover(fn(){}, function(){}); // What hapens when mouse goes
+```
+## doubleclick
+```javascript
+$().dblclick(fn(){})
+
+## on
+Pass the events 
+
+```javascript
+function showWhatTouched(e) {
+	alert(e.data.message);
+}
+
+var bsMsg = { message : “asdas}
+on(“mouseover/track/scroll”. Blah, function)
+```
+
+```
+
+## Form events
+Blur => takes a function
+Change 
+Focus
+Select
+
