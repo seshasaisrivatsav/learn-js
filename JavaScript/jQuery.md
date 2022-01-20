@@ -1,5 +1,27 @@
 ### jQuery
 
+## Creating custom elements
+```javascript
+    		var footer = jQuery("<footer/>").addClass("Dialog-footer");
+		
+                var actionsDiv = jQuery("<div/>")
+                    .addClass("Dialog-actions")
+                    .attr("data-qe-id", $ctrl.tileInfo.name + "-tutorial-dialog-actions");
+
+
+                $ctrl.button = jQuery("<a/>")
+                    .addClass("Button Button--primary")
+                    .attr("data-qe-id", $ctrl.tileInfo.name + "-tutorial-dialog-primaryAction")
+                    .attr("type", "button")
+                    .attr("ng-click", "$ctrl.navigateToCallToActionLink()")
+                    .text($ctrl.callToAction);
+
+                actionsDiv.append($ctrl.button);
+                footer.append(actionsDiv);
+              // jQuery(".Dialog.is-open").children(".Dialog-inner").append(footer);
+
+```
+
 ## Select and click
 $("[data-qe-id='create-flow-panel-continue-to-editor-btn']").trigger('click')
     
