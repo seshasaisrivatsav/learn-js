@@ -41,7 +41,17 @@
   3. Absolute - Element positioned relative to its first non-static ancestor is called Absolute. top, right, bottom, left, z-index can be used
   4. Fixed - Relative to browser
   5. Sticky 
-  
+
+Example:
+```
+.positionTrialPopUpImage {
+ position: relative;
+ top: -24px;
+ left: -24px;
+}
+```
+- Position: relative will make the current element in a relative position
+- 
 ### Float
 - Setting this property to left or right, floats an element to container, wraps the rest of the content around it.
 - Defaults to none
