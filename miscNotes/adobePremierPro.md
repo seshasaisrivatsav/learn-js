@@ -67,3 +67,6 @@ You can copy paste the scope
 - Then Move all clips from V1 to V2 to fill gaps
 - Move clips from V2 to V1 (while selection still holds)
 - Select all color matte clips in v2 and ripple delete)
+
+### Correcting distored video - Changing Perspective
+- Effect name: Corner pin https://youtu.be/admpmfMHfpc
